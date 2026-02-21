@@ -1,3 +1,5 @@
+import 'package:anime_universe/src/config/router/router_part.dart';
+import 'package:anime_universe/src/config/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {

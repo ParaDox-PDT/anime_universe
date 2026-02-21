@@ -11,21 +11,27 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'src/core/di/di_part.dart';
 
 Future<void> bootstrap() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  // UI settings
-  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-
-  // Logger
-  AppLogger.init();
-
-  FlutterError.onError = (details) {
-    FlutterError.presentError(details);
-    AppLogger.e('FlutterError', error: details.exception, stackTrace: details.stack);
-  };
-
   await runZonedGuarded(
-    () async {
+        () async {
+      WidgetsFlutterBinding.ensureInitialized();
+
+      // UI settings
+      await SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp],
+      );
+
+      // Logger
+      AppLogger.init();
+
+      FlutterError.onError = (details) {
+        FlutterError.presentError(details);
+        AppLogger.e(
+          'FlutterError',
+          error: details.exception,
+          stackTrace: details.stack,
+        );
+      };
+
       // App initializer (Hive, env, config, cache warmup, ... )
       await AppInitializer.init();
 
@@ -37,7 +43,7 @@ Future<void> bootstrap() async {
 
       runApp(const App());
     },
-    (error, stack) {
+        (error, stack) {
       // Uncaught zone errors
       AppLogger.e('Uncaught zone error', error: error, stackTrace: stack);
     },
