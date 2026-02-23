@@ -25,7 +25,7 @@ class SplashContent extends StatelessWidget {
             listenWhen: (p, c) => p.progress != c.progress,
             listener: (context, state) {
               if (state.progress >= 1.0) {
-                context.goNamed(Routes.main);
+                context.goNamed(Routes.onBoarding);
               }
             },
             builder: (context, state) =>

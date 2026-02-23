@@ -33,8 +33,10 @@ sealed class AppUtils {
   static const kPaddingHorizontal16 = EdgeInsets.symmetric(horizontal: 16);
   static const kPaddingHorizontal40 = EdgeInsets.symmetric(horizontal: 40);
   static const kPaddingHor32Ver20 = EdgeInsets.symmetric(horizontal: 32, vertical: 20);
+  static const kPaddingHor36Ver16 = EdgeInsets.symmetric(horizontal: 36, vertical:16);
   static const kPaddingBottom16 = EdgeInsets.fromLTRB(0, 0, 0, 16);
   static const kPaddingBottom2 = EdgeInsets.fromLTRB(0, 0, 0, 2);
+  static const kPaddingHor12Ver14 = EdgeInsets.symmetric(horizontal: 12, vertical: 14);
   static const kPaddingHor14Ver16 = EdgeInsets.symmetric(horizontal: 14, vertical: 16);
   static const kPaddingHor16Ver12 = EdgeInsets.symmetric(horizontal: 16, vertical: 12);
   static const kPaddingHor16Ver24 = EdgeInsets.symmetric(horizontal: 16, vertical: 24);
@@ -60,6 +62,7 @@ sealed class AppUtils {
   static const kBorderRadius16 = BorderRadius.all(Radius.circular(16));
   static const kBorderRadius24 = BorderRadius.all(Radius.circular(24));
   static const kBorderRadius32 = BorderRadius.all(Radius.circular(32));
+  static const kMaxBorderRadius = BorderRadius.all(Radius.circular(1000));
   static const kShapeRoundedNone = RoundedRectangleBorder();
   static const kShapeRoundedAll12 = RoundedRectangleBorder(
     borderRadius: BorderRadius.all(Radius.circular(12)),

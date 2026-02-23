@@ -1,3 +1,5 @@
+import 'package:anime_universe/src/core/extensions/color_extension.dart';
+import 'package:anime_universe/src/core/extensions/responsive_extension.dart';
 import 'package:flutter/material.dart';
 import 'colors.dart';
 
@@ -53,6 +55,33 @@ class AppTheme {
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(14),
           borderSide: BorderSide.none,
+        ),
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          fixedSize: Size.fromHeight(48.h),
+          backgroundColor: AppColors.primary,
+          foregroundColor: Colors.white,
+          disabledBackgroundColor: AppColors.primary.newWithOpacity(0.4),
+          disabledForegroundColor: Colors.white.newWithOpacity(0.6),
+          splashFactory: InkSplash.splashFactory,
+
+          minimumSize: Size.fromHeight(48.h),
+
+          shape: const StadiumBorder(),
+
+          elevation: 8,
+          shadowColor: AppColors.primary.newWithOpacity(0.35),
+
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+
+          overlayColor: Colors.white.newWithOpacity(0.10),
+
+          textStyle: TextStyle(
+            fontSize: 16.sp,
+            fontWeight: FontWeight.w600,
+            letterSpacing: 0.2,
+          ),
         ),
       ),
     );

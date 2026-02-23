@@ -4,17 +4,19 @@ import 'package:flutter/material.dart';
 class AppColors {
   AppColors._();
 
-  static const primary = Color(0xFF895BF5);
-  static const secondary = Color(0xFF00E5FF);
+  static const Color primary = Color(0xFF6326F2);
+  static const Color secondary = Color(0xFF00E5FF);
 
-  static const darkBg = Color(0xFF0F1115);
-  static const darkSurface = Color(0xFF161A22);
+  static const Color darkBg = Color(0xFF0F1115);
+  static const Color darkSurface = Color(0xFF161A22);
 
-  static const lightBg = Color(0xFFF6F7FB);
-  static const lightSurface = Colors.white;
+  static const Color lightBg = Color(0xFFF6F7FB);
+  static const Color lightSurface = Colors.white;
 
-  static const danger = Color(0xFFFF5252);
-  static const success = Color(0xFF00C853);
+  static const Color danger = Color(0xFFFF5252);
+  static const Color success = Color(0xFF00C853);
 
-  static final splashForegroundColor = const Color(0xFF0B0D12).newWithOpacity(0.7);
+  static final Color splashForegroundColor = const Color(0xFF0B0D12).newWithOpacity(0.7);
+
+  static const Color onBoardingInactiveDot = Color(0xFF334155);
 }

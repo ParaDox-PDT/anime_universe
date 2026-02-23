@@ -17,6 +17,22 @@ class AppRouter {
         ),
       ),
       GoRoute(
+        path: Routes.onBoarding,
+        name: Routes.onBoarding,
+        pageBuilder: (_, state) => CustomTransitionPage(
+          transitionDuration: const Duration(milliseconds: 1200),
+
+          /// Page
+          child: const OnBoardingPage(),
+
+          /// Fade transition
+          transitionsBuilder: (_, animation, __, child) => FadeTransition(
+            opacity: CurveTween(curve: Curves.easeInOutCirc).animate(animation),
+            child: child,
+          ),
+        ),
+      ),
+      GoRoute(
         path: Routes.main,
         name: Routes.main,
         pageBuilder: (_, state) => CustomTransitionPage(

@@ -9,34 +9,42 @@
 // ignore_for_file: type=lint
 // ignore_for_file: deprecated_member_use,directives_ordering,implicit_dynamic_list_literal,unnecessary_import
 
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart' as _svg;
+import 'package:vector_graphics/vector_graphics.dart' as _vg;
 
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
   /// File path: assets/icons/arrow_next_bold.svg
-  String get arrowNextBold => 'assets/icons/arrow_next_bold.svg';
+  SvgGenImage get arrowNextBold =>
+      const SvgGenImage('assets/icons/arrow_next_bold.svg');
 
   /// File path: assets/icons/calendar.svg
-  String get calendar => 'assets/icons/calendar.svg';
+  SvgGenImage get calendar => const SvgGenImage('assets/icons/calendar.svg');
 
   /// File path: assets/icons/cinematic.svg
-  String get cinematic => 'assets/icons/cinematic.svg';
+  SvgGenImage get cinematic => const SvgGenImage('assets/icons/cinematic.svg');
 
   /// File path: assets/icons/done_underline.svg
-  String get doneUnderline => 'assets/icons/done_underline.svg';
+  SvgGenImage get doneUnderline =>
+      const SvgGenImage('assets/icons/done_underline.svg');
 
   /// File path: assets/icons/green_circle_done.svg
-  String get greenCircleDone => 'assets/icons/green_circle_done.svg';
+  SvgGenImage get greenCircleDone =>
+      const SvgGenImage('assets/icons/green_circle_done.svg');
 
   /// File path: assets/icons/sparkle_icon.svg
-  String get sparkleIcon => 'assets/icons/sparkle_icon.svg';
+  SvgGenImage get sparkleIcon =>
+      const SvgGenImage('assets/icons/sparkle_icon.svg');
 
   /// File path: assets/icons/yellow_start.svg
-  String get yellowStart => 'assets/icons/yellow_start.svg';
+  SvgGenImage get yellowStart =>
+      const SvgGenImage('assets/icons/yellow_start.svg');
 
   /// List of all assets
-  List<String> get values => [
+  List<SvgGenImage> get values => [
     arrowNextBold,
     calendar,
     cinematic,
@@ -173,4 +181,78 @@ class AssetGenImageAnimation {
   final bool isAnimation;
   final Duration duration;
   final int frames;
+}
+
+class SvgGenImage {
+  const SvgGenImage(this._assetName, {this.size, this.flavors = const {}})
+    : _isVecFormat = false;
+
+  const SvgGenImage.vec(this._assetName, {this.size, this.flavors = const {}})
+    : _isVecFormat = true;
+
+  final String _assetName;
+  final Size? size;
+  final Set<String> flavors;
+  final bool _isVecFormat;
+
+  _svg.SvgPicture svg({
+    Key? key,
+    bool matchTextDirection = false,
+    AssetBundle? bundle,
+    String? package,
+    double? width,
+    double? height,
+    BoxFit fit = BoxFit.contain,
+    AlignmentGeometry alignment = Alignment.center,
+    bool allowDrawingOutsideViewBox = false,
+    WidgetBuilder? placeholderBuilder,
+    String? semanticsLabel,
+    bool excludeFromSemantics = false,
+    _svg.SvgTheme? theme,
+    _svg.ColorMapper? colorMapper,
+    ColorFilter? colorFilter,
+    Clip clipBehavior = Clip.hardEdge,
+    @deprecated Color? color,
+    @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
+    @deprecated bool cacheColorFilter = false,
+  }) {
+    final _svg.BytesLoader loader;
+    if (_isVecFormat) {
+      loader = _vg.AssetBytesLoader(
+        _assetName,
+        assetBundle: bundle,
+        packageName: package,
+      );
+    } else {
+      loader = _svg.SvgAssetLoader(
+        _assetName,
+        assetBundle: bundle,
+        packageName: package,
+        theme: theme,
+        colorMapper: colorMapper,
+      );
+    }
+    return _svg.SvgPicture(
+      loader,
+      key: key,
+      matchTextDirection: matchTextDirection,
+      width: width,
+      height: height,
+      fit: fit,
+      alignment: alignment,
+      allowDrawingOutsideViewBox: allowDrawingOutsideViewBox,
+      placeholderBuilder: placeholderBuilder,
+      semanticsLabel: semanticsLabel,
+      excludeFromSemantics: excludeFromSemantics,
+      colorFilter:
+          colorFilter ??
+          (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
+      clipBehavior: clipBehavior,
+      cacheColorFilter: cacheColorFilter,
+    );
+  }
+
+  String get path => _assetName;
+
+  String get keyName => _assetName;
 }
