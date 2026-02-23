@@ -37,8 +37,11 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                     ),
                   ],
                 ),
-                child: Assets.icons.cinematic.svg().padding(
-                  padding: AppUtils.kPaddingHor12Ver14,
+                child: Assets.icons.cinematic.svg(
+                  width: 24.sp,
+                  height: 24.sp,
+                ).padding(
+                  padding: AppUtils.kPaddingHor14Ver16,
                 ),
               ),
               16.g,
