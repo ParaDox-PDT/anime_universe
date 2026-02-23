@@ -27,15 +27,18 @@ sealed class AppUtils {
   static const kPaddingAll10 = EdgeInsets.all(10);
   static const kPaddingAll12 = EdgeInsets.all(12);
   static const kPaddingAll16 = EdgeInsets.all(16);
+  static const kPaddingAll20 = EdgeInsets.all(20);
   static const kPaddingAll24 = EdgeInsets.all(24);
   static const kPaddingHorizontal12 = EdgeInsets.symmetric(horizontal: 12);
   static const kPaddingHorizontal16 = EdgeInsets.symmetric(horizontal: 16);
+  static const kPaddingHorizontal40 = EdgeInsets.symmetric(horizontal: 40);
   static const kPaddingHor32Ver20 = EdgeInsets.symmetric(horizontal: 32, vertical: 20);
   static const kPaddingBottom16 = EdgeInsets.fromLTRB(0, 0, 0, 16);
   static const kPaddingBottom2 = EdgeInsets.fromLTRB(0, 0, 0, 2);
   static const kPaddingHor14Ver16 = EdgeInsets.symmetric(horizontal: 14, vertical: 16);
   static const kPaddingHor16Ver12 = EdgeInsets.symmetric(horizontal: 16, vertical: 12);
   static const kPaddingHor16Ver24 = EdgeInsets.symmetric(horizontal: 16, vertical: 24);
+  static const kPaddingHor40Ver24 = EdgeInsets.symmetric(horizontal: 40, vertical: 24);
 
   static const kPaddingAllB16 = EdgeInsets.fromLTRB(16, 16, 16, 0);
   static const kPaddingAllT16 = EdgeInsets.fromLTRB(16, 0, 16, 16);

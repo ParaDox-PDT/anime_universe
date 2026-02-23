@@ -25,14 +25,14 @@ class Responsive{
 
 extension ResponsiveNumExtenstion on num {
   // Responsive width
-  double w(BuildContext context) => Responsive.w(toDouble());
+  double get w => Responsive.w(toDouble());
 
   // Responsive height
-  double h(BuildContext context) => Responsive.h(toDouble());
+  double get h => Responsive.h(toDouble());
 
   // Responsive font size
-  double sp(BuildContext context) => Responsive.sp(toDouble());
+  double get sp => Responsive.sp(toDouble());
 
   // Responsive radius
-  double r (BuildContext context) => Responsive.sp(toDouble());
+  double get r=> Responsive.sp(toDouble());
 }

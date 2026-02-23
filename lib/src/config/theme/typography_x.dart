@@ -1,3 +1,4 @@
+import 'package:anime_universe/src/core/extensions/responsive_extension.dart';
 import 'package:flutter/material.dart';
 import 'app_typography.dart';
 
@@ -65,8 +66,13 @@ extension TypographyX on BuildContext {
 
   // 20+
   TextStyle f20Bold({Color? colorOverride, double? height}) =>
-      _t(size: 20, weight: FontWeight.w700, colorOverride: colorOverride, height: height);
+      _t(size: 20.sp, weight: FontWeight.w700, colorOverride: colorOverride, height: height);
 
   TextStyle f24ExtraBold({Color? colorOverride, double? height}) =>
       _t(size: 24, weight: FontWeight.w800, colorOverride: colorOverride, height: height);
+
+  // 48
+  TextStyle f48Bold({Color? colorOverride, double? height}) =>
+      _t(size: 48.sp, weight: FontWeight.w700, colorOverride: colorOverride, height: height);
+
 }

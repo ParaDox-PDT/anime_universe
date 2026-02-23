@@ -62,6 +62,10 @@ class $AssetsImagesGen {
   AssetGenImage get onBoardingBackgroundThird =>
       const AssetGenImage('assets/images/on_boarding_background_third.png');
 
+  /// File path: assets/images/splash_icon.png
+  AssetGenImage get splashIcon =>
+      const AssetGenImage('assets/images/splash_icon.png');
+
   /// File path: assets/images/splash_page_background.png
   AssetGenImage get splashPageBackground =>
       const AssetGenImage('assets/images/splash_page_background.png');
@@ -71,6 +75,7 @@ class $AssetsImagesGen {
     onBoardingBackgroundFirst,
     onBoardingBackgroundSecond,
     onBoardingBackgroundThird,
+    splashIcon,
     splashPageBackground,
   ];
 }
