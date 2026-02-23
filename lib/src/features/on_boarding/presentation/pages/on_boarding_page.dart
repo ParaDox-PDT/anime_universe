@@ -95,7 +95,14 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                   ],
                 ),
                 16.h.g,
-                ElevatedButton(onPressed: (){}, child: const Text('Get Started')).padding(padding: AppUtils.kPaddingHor36Ver16)
+                ElevatedButton(onPressed: (){}, child: Row(
+                  mainAxisAlignment: .center,
+                  children: [
+                    Text('Get Started',style: context.f18Bold(),),
+                    8.g,
+                    Assets.icons.arrowNextBold.svg()
+                  ],
+                )).padding(padding: AppUtils.kPaddingHor36Ver16)
               ],
             ),
           ),
