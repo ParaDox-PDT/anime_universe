@@ -13,9 +13,26 @@ class AppRouter {
         name: 'splash',
         pageBuilder: (context, state) => const MaterialPage(child: SplashPage()),
       ),
+      GoRoute(
+        path: Routes.main,
+        name: 'main',
+        pageBuilder: (_, state) => CustomTransitionPage(
+          transitionDuration: const Duration(milliseconds: 1200),
+          /// Page
+          child: const MainPage(),
+
+          /// Fade transition
+          transitionsBuilder: (_, animation, __, child) => FadeTransition(
+            opacity: CurveTween(curve: Curves.easeInOutCirc).animate(animation),
+            child: child,
+          ),
+        ),
+      ),
     ],
     errorPageBuilder: (context, state) => MaterialPage(
-      child: _RouteErrorPage(message: state.error?.toString() ?? 'Unknown route error'),
+      child: _RouteErrorPage(
+        message: state.error?.toString() ?? 'Unknown route error',
+      ),
     ),
   );
 }
@@ -44,4 +61,20 @@ class _RouteErrorPage extends StatelessWidget {
       ),
     ),
   );
+}
+
+class FadePageRoute<T> extends PageRouteBuilder<T> {
+  FadePageRoute({required this.builder})
+    : super(
+        pageBuilder: (context, animation, secondaryAnimation) => builder(context),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+            FadeTransition(opacity: animation, child: child),
+      );
+  final WidgetBuilder builder;
+
+  @override
+  bool get maintainState => true;
+
+  @override
+  Duration get transitionDuration => const Duration(milliseconds: 1000);
 }
