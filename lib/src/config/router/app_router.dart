@@ -10,14 +10,18 @@ class AppRouter {
     routes: [
       GoRoute(
         path: Routes.splash,
-        name: 'splash',
-        pageBuilder: (context, state) => const MaterialPage(child: SplashPage()),
+        name: Routes.splash,
+        builder: (context, state) => BlocProvider<SplashCubit>(
+          create: (context) => SplashCubit()..startTimer(),
+          child: const SplashPage(),
+        ),
       ),
       GoRoute(
         path: Routes.main,
-        name: 'main',
+        name: Routes.main,
         pageBuilder: (_, state) => CustomTransitionPage(
           transitionDuration: const Duration(milliseconds: 1200),
+
           /// Page
           child: const MainPage(),
 

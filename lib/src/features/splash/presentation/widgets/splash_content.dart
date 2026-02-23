@@ -20,7 +20,17 @@ class SplashContent extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           AppUtils.kSpacer,
-          const SplashProgress(label: 'INITIALIZING...', percent: 0.72),
+          BlocConsumer<SplashCubit, SplashState>(
+            buildWhen: (p, c) => p.progress != c.progress,
+            listenWhen: (p, c) => p.progress != c.progress,
+            listener: (context, state) {
+              if (state.progress >= 1.0) {
+                context.goNamed(Routes.main);
+              }
+            },
+            builder: (context, state) =>
+                SplashProgress(label: 'INITIALIZING...', percent: state.progress),
+          ),
           12.g,
           Text(
             'DEVELOPED BY ParaDoxical Team',
