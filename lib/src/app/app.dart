@@ -1,17 +1,24 @@
 import 'package:anime_universe/src/config/router/router_part.dart';
 import 'package:anime_universe/src/config/theme/app_theme.dart';
+import 'package:anime_universe/src/core/extensions/responsive_extension.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
 
   @override
-  Widget build(BuildContext context) => MaterialApp.router(
-    title: 'Anime Universe',
-    debugShowCheckedModeBanner: false,
-    theme: AppTheme.light(),
-    darkTheme: AppTheme.dark(),
-    themeMode: ThemeMode.dark,
-    routerConfig: AppRouter.router,
-  );
+  Widget build(BuildContext context) {
+    // Initialize responsive design
+    Responsive.init(context);
+
+    // Initialize App
+    return MaterialApp.router(
+      title: 'Anime Universe',
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.light(),
+      darkTheme: AppTheme.dark(),
+      themeMode: ThemeMode.dark,
+      routerConfig: AppRouter.router,
+    );
+  }
 }

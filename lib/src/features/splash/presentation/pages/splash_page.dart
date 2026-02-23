@@ -1,3 +1,4 @@
+import 'package:anime_universe/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatelessWidget {
@@ -5,5 +6,14 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) =>
-      Scaffold(appBar: AppBar(title: const Text('SPLASH PAGE')));
+      Scaffold(
+        body: Stack(
+          children: [
+            Assets.images.splashPageBackground.image(
+
+                fit: BoxFit.fill
+            )
+          ],
+        )
+      );
 }
