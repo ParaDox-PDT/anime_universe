@@ -21,81 +21,119 @@ extension TypographyX on BuildContext {
     fontFamily: fontFamilyOverride,
   );
 
-  // 12
-  TextStyle f12Regular({Color? colorOverride, double? height}) => _t(
-    size: 12,
+  // 10
+  TextStyle f10Regular({Color? colorOverride, double? height}) => _t(
+    size: 10.sp,
     weight: FontWeight.w400,
     colorOverride: colorOverride,
     height: height,
   );
 
+  TextStyle f10Medium({Color? colorOverride, double? height}) => _t(
+    size: 10.sp,
+    weight: FontWeight.w500,
+    colorOverride: colorOverride,
+    height: height,
+  );
+
+  TextStyle f10SemiBold({Color? colorOverride, double? height}) => _t(
+    size: 10.sp,
+    weight: FontWeight.w600,
+    colorOverride: colorOverride,
+    height: height,
+  );
+
+  TextStyle f10Bold({Color? colorOverride, double? height}) => _t(
+    size: 10.sp,
+    weight: FontWeight.w700,
+    colorOverride: colorOverride,
+    height: height,
+  );
+
+  // 12
+  TextStyle f12Regular({Color? colorOverride, double? height, double? letterSpacing}) => _t(
+    size: 12.sp,
+    weight: FontWeight.w400,
+    colorOverride: colorOverride,
+    height: height,
+    letterSpacing: letterSpacing,
+  );
+
   TextStyle f12Medium({Color? colorOverride, double? height}) => _t(
-    size: 12,
+    size: 12.sp,
     weight: FontWeight.w500,
     colorOverride: colorOverride,
     height: height,
   );
 
   TextStyle f12SemiBold({Color? colorOverride, double? height}) => _t(
-    size: 12,
+    size: 12.sp,
     weight: FontWeight.w600,
+    colorOverride: colorOverride,
+    height: height,
+  );
+
+  TextStyle f12Bold({Color? colorOverride, double? height}) => _t(
+    size: 12.sp,
+    weight: FontWeight.w700,
     colorOverride: colorOverride,
     height: height,
   );
 
   // 14
   TextStyle f14Regular({Color? colorOverride, double? height}) => _t(
-    size: 14,
+    size: 14.sp,
     weight: FontWeight.w400,
     colorOverride: colorOverride,
     height: height,
   );
 
   TextStyle f14Medium({Color? colorOverride, double? height}) => _t(
-    size: 14,
+    size: 14.sp,
     weight: FontWeight.w500,
     colorOverride: colorOverride,
     height: height,
   );
 
   TextStyle f14SemiBold({Color? colorOverride, double? height}) => _t(
-    size: 14,
+    size: 14.sp,
     weight: FontWeight.w600,
     colorOverride: colorOverride,
     height: height,
   );
 
   TextStyle f14Bold({Color? colorOverride, double? height}) => _t(
-    size: 14,
+    size: 14.sp,
     weight: FontWeight.w700,
     colorOverride: colorOverride,
     height: height,
   );
 
   // 16
-  TextStyle f16Regular({Color? colorOverride, double? height}) => _t(
-    size: 16,
+  TextStyle f16Regular({Color? colorOverride, double? height, double? letterSpacing}) => _t(
+    size: 16.sp,
     weight: FontWeight.w400,
     colorOverride: colorOverride,
     height: height,
+    letterSpacing: letterSpacing,
   );
 
   TextStyle f16Medium({Color? colorOverride, double? height}) => _t(
-    size: 16,
+    size: 16.sp,
     weight: FontWeight.w500,
     colorOverride: colorOverride,
     height: height,
   );
 
   TextStyle f16SemiBold({Color? colorOverride, double? height}) => _t(
-    size: 16,
+    size: 16.sp,
     weight: FontWeight.w600,
     colorOverride: colorOverride,
     height: height,
   );
 
   TextStyle f16Bold({Color? colorOverride, double? height}) => _t(
-    size: 16,
+    size: 16.sp,
     weight: FontWeight.w700,
     colorOverride: colorOverride,
     height: height,
@@ -134,6 +172,14 @@ extension TypographyX on BuildContext {
   TextStyle f24ExtraBold({Color? colorOverride, double? height}) => _t(
     size: 24,
     weight: FontWeight.w800,
+    colorOverride: colorOverride,
+    height: height,
+  );
+
+  // 32
+  TextStyle f32Bold({Color? colorOverride, double? height}) => _t(
+    size: 32.sp,
+    weight: FontWeight.w700,
     colorOverride: colorOverride,
     height: height,
   );
