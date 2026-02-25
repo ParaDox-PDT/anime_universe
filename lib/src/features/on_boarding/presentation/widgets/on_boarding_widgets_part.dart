@@ -14,3 +14,6 @@ import 'package:flutter/material.dart';
 part 'on_boarding_first_page.dart';
 part 'on_boarding_second_page.dart';
 part 'on_boarding_third_page.dart';
+part 'on_boarding_footer_dot.dart';
+part 'on_boarding_footer.dart';
+part 'on_boarding_page_view.dart';

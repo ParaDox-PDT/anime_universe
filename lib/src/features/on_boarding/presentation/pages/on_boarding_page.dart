@@ -7,71 +7,16 @@ class OnBoardingPage extends StatefulWidget {
   State<OnBoardingPage> createState() => _OnBoardingPageState();
 }
 
-class _OnBoardingPageState extends State<OnBoardingPage> {
+class _OnBoardingPageState extends State<OnBoardingPage> with OnBoardingMixin {
   @override
   Widget build(BuildContext context) => Scaffold(
     body: Column(
       children: [
-        Expanded(
-          child: PageView(
-            children: const [
-              OnBoardingFirstPage(),
-              OnBoardingSecondPage(),
-              OnBoardingThirdPage(),
-            ],
-          ),
-        ),
+        OnBoardingPageView(pageController: pageController),
         40.h.g,
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: SafeArea(
-            top: false,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Row(
-                  mainAxisAlignment: .center,
-                  children: [
-                    DecoratedBox(
-                      decoration: const BoxDecoration(
-                        color: AppColors.primary,
-                        borderRadius: AppUtils.kMaxBorderRadius,
-                      ),
-                      child: SizedBox(height: 8.h, width: 32.w),
-                    ),
-                    8.g,
-                    DecoratedBox(
-                      decoration: const BoxDecoration(
-                        color: Color(0xFF334155),
-                        borderRadius: AppUtils.kMaxBorderRadius,
-                      ),
-                      child: SizedBox(height: 8.sp, width: 8.sp),
-                    ),
-                    8.g,
-                    DecoratedBox(
-                      decoration: const BoxDecoration(
-                        color: Color(0xFF334155),
-                        borderRadius: AppUtils.kMaxBorderRadius,
-                      ),
-                      child: SizedBox(height: 8.sp, width: 8.sp),
-                    ),
-                  ],
-                ),
-                16.h.g,
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Row(
-                    mainAxisAlignment: .center,
-                    children: [
-                      Text('Get Started', style: context.f18Bold()),
-                      8.g,
-                      Assets.icons.arrowNextBold.svg(),
-                    ],
-                  ),
-                ).padding(padding: AppUtils.kPaddingHor36Ver16),
-              ],
-            ),
-          ),
+        OnBoardingFooter(
+          pageViewActiveIndex: pageViewActiveIndex,
+          onPageChanged: onPageChanged,
         ),
       ],
     ),
